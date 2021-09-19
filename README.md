@@ -1,43 +1,63 @@
-# uGUID
+# Quick GUIDs
 #### Summary
-Adds an attribute with a custom drawer that allows for easily generating and randomizing new GUID values within the Unity Editor. This small API uses the [Guid Struct](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0) in the `System` namespace to generate new values.
+Adds some useful GUID field controls for within the Unity Editor. This small API uses the [Guid Struct](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0) in the `System` namespace to generate new values.
 
-In the future, this API will also provide more unique and complicated ways of dealing with GUIDs.
+![Example](https://i.imgur.com/kETVeFu.gif)
 
-# General Usage
-1. Download the repository into your `Assets` folder (if downloading from Git). 
-2. Import the uGUID namespace into a C# file.
-
+#Usage
+### The `GUID` Attribute
+1. Add a `using` statement to include the `QuickGUIDs` namespace.
+2. Add the `[GUID]` attribute onto any `string` field. 
 ```c#
-using uGUID;
-```
+using System;
+using QuickGUIDs;
+using UnityEngine;
 
-3. Create a `string` field inside any serializable class that you would use within the Unity Editor.
-
-```c#
-[Serializable]
-public class MyBehaviour : MonoBehaviour
+namespace TestBehaviours
 {
-  public string myGuid;
+    public class MyBehaviour : MonoBehaviour
+    {
+        [GUID] public string myGuid = Guid.NewGuid().ToString();
+    }
 }
 ```
 
-4. Add the `[GUID]` attribute to the `string` field.
-
+### The `SmartGUID` Class
+1. Add a `using` statement to include the `QuickGUIDs` namespace.
+2. Add a new `SmartGUID` field.
+3. Access the fields of the object to read its value, assign a new value, or evaluate its locked state.
 ```c#
-[GUID] public string myGuid;
+using QuickGUIDs;
+using UnityEngine;
+
+namespace TestBehaviours
+{
+    public class MyBehaviour : MonoBehaviour
+    {
+        public SmartGUID mySmartGuid = new SmartGUID();
+
+        private void Update()
+        {
+            // print the current value and lock state
+        
+            Debug.Log($"{mySmartGuid.value}, {mySmartGuid.locked}");
+            
+            // assign a random new GUID to the value
+            
+            mySmartGuid.NewGuid(); 
+            
+            // attempt to parse a GUID value by updating the object. When the second parameter is true,
+            // the function will throw an exception if the given GUID isn't valid.
+            
+            try 
+            {
+                mySmartGuid.SetGuid("This Is Not a GUID", true);
+            } 
+            catch 
+            {
+                Debug.Log("Invalid GUID!");
+            }
+        }
+    }
+}
 ```
-
-5. In the Unity Editor, press the "R" button next to the field to randomize the GUID value. 
-6. NOTE: You can initialize a GUID field by doing this:
-
-```c#
-using System;
-
-...
-
-[GUID] public string myGuid = Guid.NewGuid().ToString();
-```
-
-# Detailed Usage
-More GUID handling with advanced classes coming soon. 
