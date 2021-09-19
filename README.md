@@ -1,6 +1,8 @@
-# GUID Attribute
+# uGUID
 #### Summary
 Adds an attribute with a custom drawer that allows for easily generating and randomizing new GUID values within the Unity Editor. This small API uses the [Guid Struct](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0) in the `System` namespace to generate new values.
+
+In the future, this API will also provide more unique and complicated ways of dealing with GUIDs.
 
 # General Usage
 1. Download the repository into your `Assets` folder (if downloading from Git). 
