@@ -14,9 +14,9 @@ namespace QuickGUIDs
 
         public bool locked => _locked;
 
-        public void SetGuid(string guid, bool throwOnInvalidInput = false)
+        public void Set(string guid, bool overrideLocked = false, bool throwOnInvalidInput = false)
         {
-            if (_locked)
+            if (_locked && !overrideLocked)
             {
                 return;
             }
@@ -28,6 +28,8 @@ namespace QuickGUIDs
                     throw new ArgumentException("Given GUID value is incorrectly formatted and not parseable.");
                 }
                 
+                Debug.LogError("Given GUID value is incorrectly formatted and not parseable.");
+
                 return;
             }
             
