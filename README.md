@@ -4,7 +4,7 @@ Adds some useful GUID field controls for within the Unity Editor. This small API
 
 ![Example](https://i.imgur.com/kETVeFu.gif)
 
-#Usage
+# Usage
 ### The `GUID` Attribute
 1. Add a `using` statement to include the `QuickGUIDs` namespace.
 2. Add the `[GUID]` attribute onto any `string` field. 
