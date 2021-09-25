@@ -2,7 +2,7 @@
 
 namespace EasyGuidFields
 {
-    public class GUIDAttribute : PropertyAttribute
+    public class GuidAttribute : PropertyAttribute
     {
         
     }

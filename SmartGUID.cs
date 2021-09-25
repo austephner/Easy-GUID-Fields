@@ -3,8 +3,11 @@ using UnityEngine;
 
 namespace EasyGuidFields
 {
+    /// <summary>
+    /// Serializable GUID field that can be locked to prevent changes to values from the editor. 
+    /// </summary>
     [Serializable]
-    public class SmartGUID
+    public class SmartGuid
     {
         [SerializeField] private string _value = Guid.NewGuid().ToString();
 
@@ -14,9 +17,14 @@ namespace EasyGuidFields
 
         public bool locked => _locked;
 
-        public void SetGuid(string guid, bool throwOnInvalidInput = false)
+        public void SetLock(bool newLockedStatus)
         {
-            if (_locked)
+            _locked = newLockedStatus;
+        }
+
+        public void SetGuid(string guid, bool overrideLock = false, bool throwOnInvalidInput = false)
+        {
+            if (_locked && overrideLock)
             {
                 return;
             }

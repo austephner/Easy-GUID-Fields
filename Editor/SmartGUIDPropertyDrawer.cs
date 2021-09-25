@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EasyGuidFields.Editor
 {
-    [CustomPropertyDrawer(typeof(SmartGUID))]
+    [CustomPropertyDrawer(typeof(SmartGuid))]
     public class SmartGUIDPropertyDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
