@@ -1,4 +1,4 @@
-# Quick GUIDs
+# Easy GUID Fields
 #### Summary
 Adds some useful GUID field controls for within the Unity Editor. This small API uses the [Guid Struct](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0) in the `System` namespace to generate new values.
 

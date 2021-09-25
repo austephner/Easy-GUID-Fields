@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace QuickGUIDs.Editor
+namespace EasyGuidFields.Editor
 {
     [CustomPropertyDrawer(typeof(SmartGUID))]
     public class SmartGUIDPropertyDrawer : PropertyDrawer

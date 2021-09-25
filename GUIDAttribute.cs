@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace QuickGUIDs
+namespace EasyGuidFields
 {
     public class GUIDAttribute : PropertyAttribute
     {

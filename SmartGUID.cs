@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace QuickGUIDs
+namespace EasyGuidFields
 {
     [Serializable]
     public class SmartGUID

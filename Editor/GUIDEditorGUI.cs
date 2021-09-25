@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace QuickGUIDs.Editor
+namespace EasyGuidFields.Editor
 {
     public static class GUIDEditorGUI
     {
