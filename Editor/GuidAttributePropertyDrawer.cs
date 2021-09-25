@@ -8,7 +8,7 @@ namespace EasyGuidFields.Editor
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            property.stringValue = GUIDEditorGUI.DrawGUID(position, label, property.stringValue);
+            property.stringValue = GuidEditorGUI.DrawGUID(position, label, property.stringValue);
         }
     }
 }

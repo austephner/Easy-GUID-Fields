@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace EasyGuidFields.Editor
 {
-    public static class GUIDEditorGUI
+    public static class GuidEditorGUI
     {
         public static string DrawGUID(Rect position, GUIContent label, string guid)
         {
@@ -67,6 +67,21 @@ namespace EasyGuidFields.Editor
                 locked = locked != true;
             }
             
+            return guid;
+        }
+        
+        public static string EditorGUILayoutGuidField(GUIContent label, string guid)
+        {
+            using (new GUILayout.HorizontalScope())
+            {
+                guid = UnityEditor.EditorGUILayout.TextField(label, guid);
+
+                if (GUILayout.Button(new GUIContent("R", "Randomize"), GUILayout.ExpandWidth(false)))
+                {
+                    guid = Guid.NewGuid().ToString();
+                }
+            }
+
             return guid;
         }
     }

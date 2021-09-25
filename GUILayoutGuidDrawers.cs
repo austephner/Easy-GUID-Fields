@@ -34,24 +34,5 @@ namespace EasyGuidFields
 
             return guid;
         }
-        
-#if UNITY_EDITOR
-
-        public static string EditorGuidField(GUIContent label, string guid)
-        {
-            using (new GUILayout.HorizontalScope())
-            {
-                guid = UnityEditor.EditorGUILayout.TextField(label, guid);
-
-                if (GUILayout.Button(new GUIContent("R", "Randomize"), GUILayout.ExpandWidth(false)))
-                {
-                    guid = Guid.NewGuid().ToString();
-                }
-            }
-
-            return guid;
-        }
-        
-#endif
     }
 }

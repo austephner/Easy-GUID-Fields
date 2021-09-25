@@ -1,16 +1,16 @@
-# Easy GUID Fields
+# GUID Fields
 #### Summary
 Adds some useful GUID field controls for within the Unity Editor. This small API uses the [Guid Struct](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0) in the `System` namespace to generate new values.
 
 ![Example](https://i.imgur.com/kETVeFu.gif)
 
 # Usage
-### The `GUID` Attribute
-1. Add a `using` statement to include the `QuickGUIDs` namespace.
-2. Add the `[GUID]` attribute onto any `string` field. 
+### The `Guid` Attribute
+1. Add a `using` statement to include the `SmartGuid` namespace.
+2. Add the `[Guid]` attribute onto any `string` field. 
 ```c#
 using System;
-using QuickGUIDs;
+using GuidFields;
 using UnityEngine;
 
 namespace TestBehaviours
@@ -22,19 +22,19 @@ namespace TestBehaviours
 }
 ```
 
-### The `SmartGUID` Class
-1. Add a `using` statement to include the `QuickGUIDs` namespace.
-2. Add a new `SmartGUID` field.
+### The `SmartGuid` Class
+1. Add a `using` statement to include the `GuidFields` namespace.
+2. Add a new `SmartGuid` field.
 3. Access the fields of the object to read its value, assign a new value, or evaluate its locked state.
 ```c#
-using QuickGUIDs;
+using GuidFields;
 using UnityEngine;
 
 namespace TestBehaviours
 {
     public class MyBehaviour : MonoBehaviour
     {
-        public SmartGUID mySmartGuid = new SmartGUID();
+        public SmartGuid mySmartGuid = new SmartGuid();
 
         private void Update()
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace EasyGuidFields.Editor
 {
     [CustomPropertyDrawer(typeof(SmartGuid))]
-    public class SmartGUIDPropertyDrawer : PropertyDrawer
+    public class SmartGuidPropertyDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
@@ -13,7 +13,7 @@ namespace EasyGuidFields.Editor
             var value = valueProperty.stringValue;
             var locked = lockedProperty.boolValue;
 
-            value = GUIDEditorGUI.DrawGUID(position, label, value, ref locked);
+            value = GuidEditorGUI.DrawGUID(position, label, value, ref locked);
 
             valueProperty.stringValue = value;
             lockedProperty.boolValue = locked;
