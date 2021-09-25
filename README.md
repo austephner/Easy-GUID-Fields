@@ -1,4 +1,7 @@
 # GUID Fields
+#### USAGE NOTE
+The majority of this code has been included in another API with more randomizable Unity fields. See [Randomizable Fields](https://github.com/austephner/RandomizableFields).
+
 #### Summary
 Adds some useful GUID field controls for within the Unity Editor. This small API uses the [Guid Struct](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0) in the `System` namespace to generate new values.
 
