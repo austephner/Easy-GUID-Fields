@@ -22,9 +22,9 @@ namespace EasyGuidFields
             _locked = newLockedStatus;
         }
 
-        public void SetGuid(string guid, bool overrideLock = false, bool throwOnInvalidInput = false)
+        public void Set(string guid, bool overrideLocked = false, bool throwOnInvalidInput = false)
         {
-            if (_locked && overrideLock)
+            if (_locked && !overrideLocked)
             {
                 return;
             }
@@ -36,6 +36,8 @@ namespace EasyGuidFields
                     throw new ArgumentException("Given GUID value is incorrectly formatted and not parseable.");
                 }
                 
+                Debug.LogError("Given GUID value is incorrectly formatted and not parseable.");
+
                 return;
             }
             
